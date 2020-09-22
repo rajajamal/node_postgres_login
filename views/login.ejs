@@ -13,17 +13,24 @@
   <body>
     <h1>Login</h1>
 
-    <form action="/users/login" method="POST"></form>
+    <ul>
+      <% if(messages.success_msg) { %>
+      <li><%= messages.success_msg %></li>
+      <% } %>
+    </ul>
 
-    <div>
-      <input type="email" id="email" placeholder="Email" required />
-    </div>
-    <div>
-      <input type="password" id="password" placeholder="Password" required />
-    </div>
-    <div>
-      <input type="submit" value="Login" />
-    </div>
-    <a href="/users/register">Register</a>
+    <form action="/users/login" method="POST">
+      <div>
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div>
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+      <div>
+        <input type="submit" value="Login" />
+      </div>
+
+      <a href="/users/register">Register</a>
+    </form>
   </body>
 </html>
